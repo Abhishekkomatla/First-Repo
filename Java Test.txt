@@ -1,0 +1,147 @@
+1)
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Filename {
+    public static void main(String[] args) {
+        try{
+            FileReader fi1 = new FileReader("Enter Input 1.txt");
+            FileWriter fi2 = new FileWriter("Output.txt");
+            String str = " ";
+            int a;
+            while ((a=fi1.read()) != -1){
+                str += (char)a;
+            }
+            System.out.println(str);
+            fi2.write(str);
+            fi1.close();
+            fi2.close();
+            System.out.println("File reading and writing both done");
+        }
+        catch(IOException e){
+            System.out.println("there are some IOException");
+        }
+    }
+    
+}
+
+
+
+2)
+import java.util.ArrayList;
+
+import java.util.HashMap;
+
+import java.util.List;
+
+import java.util.Map;
+
+import java.util.Map.Entry;
+
+public class sort {
+
+    public static void main(String[] args) {
+
+        Map< String ,Integer> m=new HashMap<>();
+
+        m.put("vinod",101);
+
+        m.put("naveen",17);
+
+        m.put("kiran",265);
+
+        m.put("yash",12);
+
+        m.put("king",1);
+
+        System.out.println("After sorting by value");
+
+        List<Entry<String,Integer>> l= new ArrayList<>(m.entrySet());
+
+        l.sort(Entry.comparingByValue());
+
+        l.forEach(System.out::println);
+    }
+}
+
+
+
+3)import java.util.Scanner;
+
+ class repchar {
+
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+
+        String s=sc.nextLine();
+
+        int freq[]=new int[s.length()];
+
+        char max_char=s.charAt(0);
+
+        int i,j,max;
+
+        char ch[]=s.toCharArray();
+
+        for (i = 0; i < ch.length; i++) {
+
+            freq[i]=1;
+
+            for (j = i+1; j < ch.length; j++) {
+
+                if(ch[i]==ch[j] && ch[i] !=' ' && ch[i]!='0')
+
+                {
+
+                    freq[i]++;
+
+                    ch[j]='0';
+
+                }
+
+            }
+
+        }
+       max=freq[0];
+
+        for(i=0;i<freq.length;i++)
+
+        {
+
+            if(max<freq[i])
+
+            {
+
+                max=freq[i];
+
+                max_char=ch[i];
+
+            }
+
+        }
+
+        System.out.println("Most Repeated Character in String is :" +max_char);
+
+    }
+
+}
+
+
+
+
+4)
+import java.util.Scanner;
+public class factorial {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int fact=1;
+        for(int i=a;i>=1;i--)
+        {
+            fact=fact*i;
+        }
+        System.out.println(fact);
+    }
+}
